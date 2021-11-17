@@ -85,8 +85,38 @@
 }
 
 
-.lgrg-buttons {
-  background-color: #d1d1d1;
-  color: black;
-  border: 2px solid grey;
+.sasasa {
+  font-size:20px;
+
+  font-weight:normal;
+  margin:0px;
+  overflow:visible;
+  padding:0px;
+  text-align:center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.texto {
+  font-size: 15px;
+
+  font-weight:normal;
+  margin:0px;
+  overflow:visible;
+  padding:0px;
+}
+
+.linea {
+  background-color: #FFFFFF;
+  font-size: 1px;
+
+  margin-bottom: 30px;
+}
+
+.swiper-slide {
+  border-radius: 10px;
+  width: 10rem;
+  height: 7rem;
+  background-color: blue;
 }

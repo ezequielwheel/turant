@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <!--
+  <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -10,119 +11,133 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
 
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <!-- Color theme for statusbar -->
-    <!-- <meta name="theme-color" content="#2196f3"> -->
-    <meta name="color-scheme" content="light dark">
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- Color theme for statusbar -->
+  <!-- <meta name="theme-color" content="#2196f3"> -->
+  <meta name="color-scheme" content="light dark">
 
-    <!-- Your app title -->
-    <title>My App</title>
-    <!-- Path to Framework7 Library CSS -->
-    <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css">
-    <!-- Path to icons -->
-    <link rel="stylesheet" href="css/icons.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Your app title -->
+  <title>My App</title>
+  <!-- Path to Framework7 Library CSS -->
+  <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css">
+  <!-- Path to icons -->
+  <link rel="stylesheet" href="css/icons.css">
+  <!-- Path to your custom app styles-->
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="app">
-        <!-- Statusbar overlay -->
-        <div class="statusbar"></div>
-    
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-       
-            <!-- Top Navbar -->
+  <div id="app">
+    <!-- Statusbar overlay -->
+    <div class="statusbar"></div>
+
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+
+      <!-- Top Navbar -->
+      <div class="navbar">
+        <div class="navbar-bg" style="background-color: #78cc54;"></div>
+        <div class="navbar-inner">
+          <div class="title">
+            <h2 style="font-family: 'Pacifico', cursive; color: white;">Turant</h2>
+          </div>
+          <div class="right">
+            <button class="button lgrg-buttons" style="color: black; margin-right: 1rem;" id="rg-btn"><a
+                href="/register/">Registrarse</a></button>
+            <button class="button lgrg-buttons" style="color: black;" id="lg-btn"><a href="/login/">Iniciar
+                sesión</a></button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar toolbar-bottom">
+        <div class="toolbar-inner">
+          <!-- Toolbar links -->
+          <a href="#" class="link">Link 1</a>
+          <a href="#" class="link">Link 2</a>
+        </div>
+      </div>
+
+      <!-- Initial Page, "data-name" contains page name -->
+      <div data-name="register" class="page">
+        <!-- Scrollable page content -->
+        <div class="page-content">
+          <div class="page">
             <div class="navbar">
-                <div class="navbar-bg" style="background-color: #78cc54;"></div>
-                <div class="navbar-inner">
-                    <div class="left"><a href="#" class="link"><i class="icon icon-back" style="color: white;"></i></a></div>
-                    <div class="title"><h2 style="font-family: 'Pacifico', cursive; color: white;">Turant</h2></div>
-                    <div class="right">
-                        <button class="button lgrg-buttons" style="color: black; margin-right: 1rem;">Registrarse</button>
-                        <button class="button lgrg-buttons" style="color: black;">Iniciar sesión</button>
-                        <a href="#" class="link"><i class="icon icon-forward" style="color: white;"></i></a>
+              <div class="navbar-bg"></div>
+              <div class="navbar-inner">
+                <div class="title">Form Storage</div>
+              </div>
+            </div>
+            <div class="page-content">
+              <form class="list" id="my-form">
+                <ul>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="">Unite a Turant</div>
+                      </div>
                     </div>
-                    
-                </div>
-            </div>
-    
-            <!-- Toolbar -->
-            <div class="toolbar toolbar-bottom">
-                <div class="toolbar-inner">
-                <!-- Toolbar links -->
-                <a href="#" class="link">Link 1</a>
-                <a href="#" class="link">Link 2</a>
-                </div>
-            </div>
-        
-        <!-- Initial Page, "data-name" contains page name -->
-            <div data-name="register" class="page">
-                <!-- Scrollable page content -->
-                <div class="page-content">
-                    <div class="page">
-                        <div class="navbar">
-                          <div class="navbar-bg"></div>
-                          <div class="navbar-inner">
-                            <div class="title">Form Storage</div>
-                          </div>
-                        </div>
-                        <div class="page-content">
-                            <form class="list" id="my-form">
-                                <ul>
-                                    <li>
-                                        <div class="item-content item-input">
-                                          <div class="item-inner">
-                                            <div class="item-title item-label">Nombre y apellido</div>
-                                            <div class="item-input-wrap">
-                                              <input type="text" name="name" id="rg-name"/>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li>
-                                        <div class="item-content item-input">
-                                          <div class="item-inner">
-                                            <div class="item-title item-label">Correo electronico</div>
-                                            <div class="item-input-wrap">
-                                              <input type="email" name="email" id="rg-email"/>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li>
-                                        <div class="item-content item-input">
-                                          <div class="item-inner">
-                                            <div class="item-title item-label">Contraseña</div>
-                                            <div class="item-input-wrap">
-                                              <input type="password" name="password" id="rg-pass"/>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                </ul>
-                                <input type="button" name="" id="send-rg-btn" value="holaaaaaaa">
-                              </form>
+                  </li>
+
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Nombre y apellido</div>
+                        <div class="item-input-wrap">
+                          <input type="text" name="name" id="rg-name" />
                         </div>
                       </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Correo electronico</div>
+                        <div class="item-input-wrap">
+                          <input type="email" name="email" id="rg-email" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Contraseña</div>
+                        <div class="item-input-wrap">
+                          <input type="password" name="password" id="rg-pass" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div style="align-items: center; text-align: center">
+                  <input style="padding-left: 40%; padding-right: 40%; margin-top: 1rem;" type="button"
+                    value="Registrarse" id="send-rg-btn">
                 </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
+  </div>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
+  <script type="text/javascript" src="js/my-app.js"></script>
 </body>
 
 </html>
