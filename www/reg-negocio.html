@@ -37,16 +37,16 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="">Unite a Turant</div>
+                      <div>Registrá tu local</div>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">Nombre y apellido</div>
+                      <div class="item-title item-label">Nombre del local</div>
                       <div class="item-input-wrap">
-                        <input type="text" name="name" id="rg-name" />
+                        <input type="text" name="name" id="local-name" placeholder="Ej. Los Pollos Hermanos"/>
                       </div>
                     </div>
                   </div>
@@ -54,9 +54,9 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">Correo electronico</div>
+                      <div class="item-title item-label">Ubicación</div>
                       <div class="item-input-wrap">
-                        <input type="email" name="email" id="rg-email" />
+                        <input type="text" id="local-location" placeholder="Ej.  Pellegrini 1200"/>
                       </div>
                     </div>
                   </div>
@@ -64,9 +64,19 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">Contraseña</div>
+                      <div class="item-title item-label">Añade una foto de tu local</div>
                       <div class="item-input-wrap">
-                        <input type="password" name="password" id="rg-pass" />
+                        <input type="text" id="local-pic" placeholder="Un enlace a la imagen"/>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Descripción</div>
+                      <div class="item-input-wrap">
+                        <input type="text" id="local-desc" placeholder="Contanos como es tu local"/>
                       </div>
                     </div>
                   </div>
@@ -75,13 +85,13 @@
               <div style="height: 3rem; position: relative;">
                 <div style="align-items: center; text-align: center; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
                   <input type="button" value="Enviar"
-                    id="send-rg-btn">
+                    id="send-local-btn" onclick="sendlocalbtn()">
                 </div>
               </div>
               <div style="height: 3rem; position: relative;">
                 <div style="align-items: center; text-align: center; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
-                  <input type="button" value="Iniciar sesión"
-                    onclick="tologin()">
+                  <input type="button" value="Volver al inicio"
+                    onclick="tomain()">
                 </div>
               </div>
             </form>

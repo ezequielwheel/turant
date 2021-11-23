@@ -31,6 +31,14 @@ var app = new Framework7({
       path: '/main/',
       url: 'main.html',
     },
+    {
+      path: '/reg-negocio/',
+      url: 'reg-negocio.html',
+    },
+    {
+      path: '/exitolocal/',
+      url: 'exitolocal.html',
+    },
   ]
   // ... other parameters
 });
@@ -55,6 +63,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
   alert('Hello');
 })
 
+var userEmail;
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   $$("#send-lg-btn").on("click", function () {
@@ -69,6 +78,8 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
         console.log("Bienvenid@!!! " + emailDelUser);
         // ...
         mainView.router.navigate('/main/');
+        userEmail = emailDelUser;
+        console.log(userEmail);
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -93,6 +104,7 @@ $$(document).on('page:init', '.page[data-name="register"]', function (e) {
         console.log("Bienvenid@!!! " + emailDelUser);
         // ...
         mainView.router.navigate('/main/');
+        userEmail = emailDelUser;
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -112,4 +124,41 @@ $$(document).on('page:init', '.page[data-name="register"]', function (e) {
 
 function toregister() {
   mainView.router.navigate('/register/');
+}
+function tologin() {
+  mainView.router.navigate('/login/');
+}
+function tomain() {
+  mainView.router.navigate('/main/');
+}
+function toreg() {
+  mainView.router.navigate('/reg-negocio/');
+}
+
+function sendlocalbtn() {
+  var database = firebase.firestore();
+  var localName = $$("#local-name").val();
+  var localLocation = $$("#local-location").val();
+  var localPic = $$("#local-pic").val();
+  var localDesc = $$("#local-desc").val();
+  var documento;
+  database.collection("negocios").doc(userEmail + "-" + localName).set({
+    email: userEmail,
+    local: localName,
+    ubicacion: localLocation,
+    foto: localPic,
+    descripcion: localDesc,
+  });
+  if(localName=undefined) {
+    console.log("asdsdasdasd")
+  }else{
+    if(localLocation=undefined) {
+
+    }else{
+      if(localPic=undefined) {
+
+      }
+    }
+  }
+ // mainView.router.navigate('/exitolocal/');
 }

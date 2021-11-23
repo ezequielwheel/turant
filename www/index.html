@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
@@ -12,7 +11,6 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
   <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
-
   <!-- Required meta tags-->
   <meta charset="utf-8">
   <meta name="viewport"
@@ -23,7 +21,6 @@
   <!-- Color theme for statusbar -->
   <!-- <meta name="theme-color" content="#2196f3"> -->
   <meta name="color-scheme" content="light dark">
-
   <!-- Your app title -->
   <title>My App</title>
   <!-- Path to Framework7 Library CSS -->
@@ -36,15 +33,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <div id="app">
     <!-- Statusbar overlay -->
     <div class="statusbar"></div>
-
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
-
       <!-- Top Navbar -->
       <div class="navbar">
         <div class="navbar-bg" style="background-color: #78cc54;"></div>
@@ -52,17 +46,8 @@
           <div class="title">
             <h2 style="font-family: 'Pacifico', cursive; color: white;">Turant</h2>
           </div>
-          <div class="right">
-
-            <button class="button lgrg-buttons" style="color: black; margin-right: 1rem;" id="rg-btn"><a
-                href="/register/">Registrarse</a></button>
-            <button class="button lgrg-buttons" style="color: black;" id="lg-btn"><a href="/login/">Iniciar
-                sesión</a></button>
-          </div>
-
         </div>
       </div>
-
       <!-- Initial Page, "data-name" contains page name -->
       <div data-name="index" class="page">
         <!-- Scrollable page content -->
@@ -106,15 +91,18 @@
                   </li>
 
                 </ul>
-                <div style="align-items: center; text-align: center">
-                  <input style="padding-left: 40%; padding-right: 40%; margin-top: 1rem;" type="button" value="Enviar"
-                    id="send-lg-btn">
+                <div style="height: 3rem; position: relative;">
+                  <div style="align-items: center; text-align: center; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <input type="button" value="Enviar"
+                      id="send-lg-btn">
+                  </div>
                 </div>
-                <div style="align-items: center; text-align: center">
-                  <input style="padding-left: 40%; padding-right: 40%; margin-top: 1rem;" type="button" value="Enviar"
-                    onclick="toregister()">
+                <div style="height: 3rem; position: relative;">
+                  <div style="align-items: center; text-align: center; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <input type="button" value="Registrarse"
+                      onclick="toregister()">
+                  </div>
                 </div>
-
               </form>
             </div>
           </div>
@@ -123,27 +111,25 @@
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script> -->
   <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
   <script>
+    // Your web app's Firebase configuration
     const firebaseConfig = {
-      apiKey: "AIzaSyDBp12uBAPhru5ukvwC7AtBpjv9-sl3GbU",
-      authDomain: "turant-d562e.firebaseapp.com",
-      projectId: "turant-d562e",
-      storageBucket: "turant-d562e.appspot.com",
-      messagingSenderId: "249349229438",
-      appId: "1:249349229438:web:1e4affed614ac2ee37812f"
-
-    };
+      apiKey: "AIzaSyA1k1TTRyeTX4DNCMzpk_yaq4k24ObMXq8",
+      authDomain: "turant-af5ad.firebaseapp.com",
+      projectId: "turant-af5ad",
+      storageBucket: "turant-af5ad.appspot.com",
+      messagingSenderId: "583672114266",
+      appId: "1:583672114266:web:a7d1f0adfe76525a473c63"
+};
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-
-
   </script>
+
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
   <script type="text/javascript" src="js/my-app.js"></script>
 </body>
-
 </html>
