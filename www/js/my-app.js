@@ -136,29 +136,35 @@ function toreg() {
 }
 
 function sendlocalbtn() {
-  var database = firebase.firestore();
+  var db = firebase.firestore();
   var localName = $$("#local-name").val();
   var localLocation = $$("#local-location").val();
   var localPic = $$("#local-pic").val();
   var localDesc = $$("#local-desc").val();
   var documento;
-  database.collection("negocios").doc(userEmail + "-" + localName).set({
+  db.collection("negocios").doc(userEmail + "-" + localName).set({
     email: userEmail,
     local: localName,
     ubicacion: localLocation,
     foto: localPic,
     descripcion: localDesc,
   });
-  if(localName=undefined) {
-    console.log("asdsdasdasd")
+  if(document. getElementById("local-name"). value. length == 0) {
+    alert("Deben llenarse todos los campos")
   }else{
-    if(localLocation=undefined) {
-
+    if(document. getElementById("local-location"). value. length == 0) {
+      alert("Deben llenarse todos los campos")
     }else{
-      if(localPic=undefined) {
-
+      if(document. getElementById("local-pic"). value. length == 0) {
+        alert("Deben llenarse todos los campos")
+      }else{
+        if(document. getElementById("local-desc"). value. length == 0){
+          alert("Deben llenarse todos los campos")
+        }else{
+          mainView.router.navigate('/exitolocal/');
+        }
       }
     }
   }
- // mainView.router.navigate('/exitolocal/');
 }
+var coleccion = db.collection("negocios");
