@@ -135,8 +135,9 @@ function toreg() {
   mainView.router.navigate('/reg-negocio/');
 }
 
+var db = firebase.firestore();
+
 function sendlocalbtn() {
-  var db = firebase.firestore();
   var localName = $$("#local-name").val();
   var localLocation = $$("#local-location").val();
   var localPic = $$("#local-pic").val();
@@ -167,4 +168,16 @@ function sendlocalbtn() {
     }
   }
 }
-var coleccion = db.collection("negocios");
+
+$$(document).on('page:init', '.page[data-name="main"]', function (e) {
+  db.collection("negocios").get().then((querySnapshot) => {
+    $$(".swiper-wrapper").html("")
+    querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data().foto);
+        $$(".swiper-wrapper").append(`<div class="swiper-slide"><img src="${doc.data().foto}"></div>`)
+    });
+  })
+  .catch((error) => {
+    console.log("Error getting documents: ", error);
+  });
+})
