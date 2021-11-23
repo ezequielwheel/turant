@@ -170,27 +170,20 @@ function sendlocalbtn() {
 }
 
 $$(document).on('page:init', '.page[data-name="main"]', function (e) {
-  db.collection("negocios").get().limit(6) .then((querySnapshot) => {
-    $$(".swiper-wrapper").html("")
+  var contador=1;
+  
+  db.collection("negocios").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data().foto);
       //$$(".swiper-wrapper").append(`<div class="swiper-slide"><img src="${doc.data().foto}"></div>`)
+    if(contador<7){
+      $$("#c" + contador).attr("src", doc.data().foto);
+    contador++;
+    }
+      
     });
   })
   .catch((error) => {
     console.log("Error getting documents: ", error);
   });
 })
-
-$$("#c1").attr("src", doc.data().foto);
-$$("#c2").attr("src", doc.data().foto);
-$$("#c3").attr("src", doc.data().foto);
-$$("#c4").attr("src", doc.data().foto);
-$$("#c5").attr("src", doc.data().foto);
-$$("#c6").attr("src", doc.data().foto);
-$$("#c7").attr("src", doc.data().foto);
-$$("#c8").attr("src", doc.data().foto);
-$$("#c9").attr("src", doc.data().foto);
-$$("#c10").attr("src", doc.data().foto);
-$$("#c11").attr("src", doc.data().foto);
-$$("#c12").attr("src", doc.data().foto);

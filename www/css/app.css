@@ -84,6 +84,17 @@
 	font-family: 'Poppins', Arial, sans-serif;
 }
 
+.social p {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.589);
+}
+
+.toolbar {
+  background-color: #c7c7c7;
+}
+
 .sasasa {
   font-size:20px;
 
@@ -115,7 +126,18 @@
 
 .swiper-slide {
   border-radius: 10px;
-  width: 10rem;
-  height: 7rem;
+  max-width: 10rem;
+  min-width: 10rem;
+  max-height: 7rem;
+  min-height: 7rem;
   background-color: blue;
+  margin-right: 10px;
+}
+
+.ft {
+  border-radius: 10px;
+  max-width: 10rem;
+  min-width: 10rem;
+  max-height: 7rem;
+  min-height: 7rem;
 }
