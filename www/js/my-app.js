@@ -39,6 +39,14 @@ var app = new Framework7({
       path: '/exitolocal/',
       url: 'exitolocal.html',
     },
+    {
+      path: '/reservar/',
+      url: 'reservar.html',
+    },
+    {
+      path: '/prohibido/',
+      url: 'prohibido.html',
+    },
   ]
   // ... other parameters
 });
@@ -187,3 +195,69 @@ $$(document).on('page:init', '.page[data-name="main"]', function (e) {
     console.log("Error getting documents: ", error);
   });
 })
+
+//$$(".ft").on("click",function() {
+//  identification=this.id;
+//  var imgsrc=$$("#"+identification).attr("src");
+//  console.log(imgsrc);
+//})
+
+var descres
+var fotores
+var nameres
+var ubires
+var mail
+
+function imgsrc(id) {
+  console.log(id);
+  var imgsrc=$$("#"+id).attr("src");
+  console.log(imgsrc);
+  db.collection("negocios").where("foto", "==", imgsrc)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            descres=doc.data().descripcion;
+            fotores=doc.data().foto;
+            nameres=doc.data().local;
+            ubires=doc.data().ubicacion;
+            mail=doc.data().email;
+            mainView.router.navigate('/reservar/');
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+}
+
+$$(document).on('page:init', '.page[data-name="reservar"]', function (e) {
+  $$("#titleres").html(nameres);
+  $$("#srcres").attr("src", fotores);
+  $$("#descres").html(descres);
+  $$("#ubicres").html(ubires);
+})
+
+function reservar() {
+  var resName = $$("#res-name").val();
+  var resHora = $$("#res-hora").val();
+  var resCant = $$("#res-cant").val();
+  var resObs = $$("#res-obs").val();
+  var documento;
+  db.collection("reservas").doc(nameres + "-" + resName).set({
+    reserva: resName,
+    hora: resHora,
+    cantidad: resCant,
+    observaciones: resObs,
+  });
+}
+
+function verres() {
+  if(userEmail==mail){
+    mainView.router.navigate('/reservas/');
+    console.log("pepe")
+  }else{
+    mainView.router.navigate('/prohibido/');
+    console.log("asdsadsa")
+  }
+}

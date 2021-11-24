@@ -1,0 +1,107 @@
+<div id="app">
+    <!-- Statusbar overlay -->
+    <div class="statusbar"></div>
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+      <!-- Top Navbar -->
+      <div class="navbar">
+        <div class="navbar-bg" style="background-color: #78cc54;"></div>
+        <div class="navbar-inner">
+          <div class="title">
+            <h2 style="font-family: 'Pacifico', cursive; color: white;">Turant</h2>
+          </div>
+        </div>
+      </div>
+      <!-- Toolbar -->
+      <div class="toolbar toolbar-bottom">
+        <div class="toolbar-inner">
+          <!-- Toolbar links -->
+          <a href="#" class="link">Link 1</a>
+          <a href="#" class="link">Link 2</a>
+        </div>
+      </div>
+      <!-- Initial Page, "data-name" contains page name -->
+      <div data-name="reservar" class="page">
+        <!-- Scrollable page content -->
+        <div class="page-content">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-bg"></div>
+              <div class="navbar-inner">
+                <div class="title">Form Storage</div>
+              </div>
+            </div>
+            <div class="page-content">
+                <h1 id="titleres"></h1>
+                <img src="" alt="" id="srcres">
+                <h2 id="ubicres"></h2>
+                <p id="descrres"></p>
+            </div>
+            <form class="list" id="my-form">
+                <ul>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="">Reservá en este local</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Nombre y apellido</div>
+                          <div class="item-input-wrap">
+                            <input type="text" name="text" id="res-name" />
+                          </div>
+                        </div>
+                      </div>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Horario</div>
+                        <div class="item-input-wrap">
+                          <input type="text" name="text" id="res-hora" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Cantidad de personas</div>
+                        <div class="item-input-wrap">
+                          <input type="text" name="text" id="res-cant" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Observaciones</div>
+                        <div class="item-input-wrap">
+                          <input type="text" name="text" id="res-obs" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div style="height: 3rem; position: relative;">
+                  <div style="align-items: center; text-align: center; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <input type="button" value="Enviar"
+                      onclick="reservar()">
+                  </div>
+                </div>
+                <div style="height: 3rem; position: relative;">
+                    <div style="align-items: center; text-align: center; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                      <input type="button" value="Ver reservas de este local"
+                        onclick="verres()">
+                    </div>
+                  </div>
+              </form>
+              <br>
+              <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
